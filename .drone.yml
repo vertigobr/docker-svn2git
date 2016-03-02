@@ -1,0 +1,5 @@
+deploy:
+  git_push:
+    branch: master
+    remote: git@github.com:vertigobr/svn2git.git
+    force: false
