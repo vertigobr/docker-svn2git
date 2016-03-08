@@ -9,17 +9,23 @@ A minimalist container to use the (awesome) svn2git tool.
 ## Modo de usar
 ---
 
+Caso o repositório SVN se encontre na estrutura padrão de SVN (/trunk, /tags e /branches), basta executar os comandos abaixo.
 
 ```bash
 $ mkdir pasta-destino-do-projeto
 ```
 
 ```bash
-$ cd pasta-destino-do-projeto
+$ docker run -it -v $(pwd)/pasta-destino-do-projeto:/svn2git vertigobr/svn2git [REPOSITÓRIO]
 ```
 
+Caso deseje incluir o nome de cada usuário que fez o commit no projeto, tenha um arquivo texto na seguinte forma:
+
+  username-no-svn = Nome do Usuário <email-no-git@vertigo.com.br>
+  username2-no-svn = Nome do Usuário2 <email2-no-git@vertigo.com.br>
+
 ```bash
-$ docker run -it -v $(pwd):/svn2git vertigobr/svn2git [COMANDO_SVN2GIT]
+$ docker run -it -v $(pwd)/pasta-destino-do-projeto:/svn2git -v $(pwd)/authors.txt:/authors.txt vertigobr/svn2git --authors /authors.txt [REPOSITÓRIO]
 ```
 ---
 
