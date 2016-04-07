@@ -30,3 +30,7 @@ $ docker run -it -v $(pwd)/pasta-destino-do-projeto:/svn2git -v $(pwd)/authors.t
 ---
 
 Documentação do svn2git [aqui](https://github.com/nirvdrum/svn2git)
+
+## Pipeline
+
+Qualquer novo commit nesse repositório gera um push no GitHub da Vertigo e, consequentemente, uma nova imagem pública no Docker Hub da Vertigo.
